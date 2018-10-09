@@ -4,3 +4,9 @@ steps:
 
   - id: push_windowsservercore-ltsc2016
     cmd: docker push {{.Run.Registry}}/iis:{{.Values.date}}-windowsservercore-ltsc2016
+
+  - id: build_iis-1709
+    build: -f windowsservercore-1709/dockerfile -t {{.Run.Registry}}/iis:{{.Values.date}}-windowsservercore-1709 https://github.com/Microsoft/iis-docker.git
+
+  - id: push_windowsservercore-1709
+    cmd: docker push {{.Run.Registry}}/iis:{{.Values.date}}-windowsservercore-1709

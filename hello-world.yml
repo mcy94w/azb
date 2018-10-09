@@ -1,3 +1,6 @@
-version: 1.0-preview-1
 steps:
-  - cmd: hello-world
+  - id: build_iis-ltsc2016
+    build: -f windowsservercore-ltsc2016/dockerfile -t {{.Run.Registry}}/{{.Values.repositoryName}}:{{.Values.date}}-windowsservercore-ltsc2016 https://github.com/Microsoft/iis.git
+
+  - id: push_windowsservercore-ltsc2016
+    cmd: docker push {{.Run.Registry}}/{{.Values.repositoryName}}:{{.Values.date}}-windowsservercore-ltsc2016

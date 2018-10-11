@@ -1,4 +1,4 @@
 # escape=`
-FROM mcy93w/iis:windowsservercore-ltsc2016
+FROM microsoft/iis:windowsservercore-ltsc2016
 
 ENV abc=abc

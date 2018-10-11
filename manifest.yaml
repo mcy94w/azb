@@ -1,5 +1,5 @@
 steps:
   - id: manifest_create
     cmd: docker manifest create  {{.Run.Registry}}/iis:{{.Values.date}}-mul {{.Run.Registry}}/iis:{{.Values.date}}-windowsservercore-1709 {{.Run.Registry}}/iis:{{.Values.date}}-windowsservercore-ltsc2016
-    cmd: docker push {{.Run.Registry}}/iis:{{.Values.date}}-mul 
+    cmd: docker manifest push {{.Run.Registry}}/iis:{{.Values.date}}-mul 
 

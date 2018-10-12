@@ -1,6 +1,6 @@
 steps:
   - id: build_testcase_1_static_http
-    build: -f static-http/dockerfile -t {{.Run.Registry}}/iis:static-http-windowsservercore-ltsc2016
+    build: -f static-http/dockerfile -t {{.Run.Registry}}/iis:static-http-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git
   - id: build_client
     build: -f client/dockerfile -t {{.Run.Registry}}/iis:client-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git
 

@@ -2,7 +2,7 @@ Param(
   [string]$server="https://www.google.com"
 )
 
-$resp = Invoke-WebRequest -UseBasicParsing -Uri $server
+$resp = Invoke-WebRequest -UseBasicParsing -Uri $Env:target
 
 if ($resp.statusCode -eq 200) {
     Write-Host "200"

@@ -9,4 +9,4 @@ Param(
 # }
 
 # sleep 3
-exit 1
+exit 0

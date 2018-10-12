@@ -5,13 +5,13 @@ FROM microsoft/windowsservercore:1803
 COPY client.ps1 c:/client.ps1
 
 
-RUN powershell -Command `
-        $ErrorActionPreference = 'Stop'; `
-        Invoke-Expression  'c:/client.ps1' ;`
-        if ($LASTEXITCODE -ne 0) {exit $LASTEXITCODE}
+# RUN powershell -Command `
+#         $ErrorActionPreference = 'Stop'; `
+#         Invoke-Expression  'c:/client.ps1' ;`
+#         if ($LASTEXITCODE -ne 0) {exit $LASTEXITCODE}
 
 
 
 
 
-# ENTRYPOINT ["powershell",  "-noprofile -f client.ps"]
+ENTRYPOINT ["powershell",  "-command   $ErrorActionPreference = 'Stop' ; Invoke-Expression  'c:/client.ps1' ; if ($LASTEXITCODE -ne 0) {exit $LASTEXITCODE}"]

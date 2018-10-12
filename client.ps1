@@ -2,11 +2,11 @@ Param(
   [string]$server="https://www.google.com"
 )
 
-# $resp = Invoke-WebRequest -UseBasicParsing -Uri $server
+$resp = Invoke-WebRequest -UseBasicParsing -Uri $server
 
-# if ($resp -eq 200) {
-#     Write-Host "200"
-# }
+if ($resp -eq 200) {
+    Write-Host "200"
+    exit 0
+}
 
-# sleep 3
-exit 0
+exit 666

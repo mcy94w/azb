@@ -3,4 +3,4 @@ steps:
     build: -f client/dockerfile -t {{.Run.Registry}}/iis:{{.Values.date}}-client-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git
   - id: run_buildclient
     cmd: {{.Run.Registry}}/iis:{{.Values.date}}-client-windowsservercore-ltsc2016
-    env: ["target=https://www.google.com/asfa"]
+    env: ["target=https://www.google.com"]

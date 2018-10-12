@@ -1,0 +1,4 @@
+steps:
+
+  - id: test_windowsservercore-ltsc2016
+    cmd: -f client/dockerfile -t {{.Run.Registry}}/iis:{{.Values.date}}-test-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git

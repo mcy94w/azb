@@ -4,7 +4,7 @@ Param(
 
 $resp = Invoke-WebRequest -UseBasicParsing -Uri $server
 
-if ($resp -eq 200) {
+if ($resp.statusCode -eq 200) {
     Write-Host "200"
     exit 0
 }

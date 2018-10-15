@@ -6,4 +6,5 @@ steps:
 
   - id: run_buildclient
     cmd: {{.Run.Registry}}//client_static_http:latest
-    env: computername=run_testcase_1_static_http
+    env: 
+      - computername=run_testcase_1_static_http

@@ -5,6 +5,6 @@ steps:
     cmd: {{.Run.Registry}}/iis:static-http-windowsservercore-ltsc2016
 
   - id: run_buildclient
-    cmd: {{.Run.Registry}}//client_static_http:latest
+    cmd: {{.Run.Registry}}/client_static_http:latest
     env: 
       - computername=run_testcase_1_static_http

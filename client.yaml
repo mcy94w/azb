@@ -1,9 +1,9 @@
 steps:
   - id: build_testcase_1_static_http
     build: -f static-http/dockerfile -t {{.Run.Registry}}/iis:static-http-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git
-  - id: build_client
-    build: -f client/dockerfile -t {{.Run.Registry}}/iis:client-windowsservercore-ltsc2016 https://github.com/mcy94w/azb.git
+  - id: run_testcase_1_static_http
+    cmd: {{.Run.Registry}}/iis:static-http-windowsservercore-ltsc2016
 
   - id: run_buildclient
-    cmd: {{.Run.Registry}}/iis:client-windowsservercore-ltsc2016
-    env: ["target=https://www.google.com"]
+    cmd: {{.Run.Registry}}//client_static_http:latest
+    env: computername=https://www.google.com
